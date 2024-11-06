@@ -13,3 +13,11 @@ class AppException implements Exception {
 class NoInternetException extends AppException {
   NoInternetException([String? message]) : super(message, 'No Internet Connection');
 }
+
+class TimeOutException extends AppException {
+  TimeOutException([String? message]) : super(message, 'Time out Exception');
+}
+
+class FetchDataException extends AppException {
+  FetchDataException([String? message]) : super(message, '');
+}
