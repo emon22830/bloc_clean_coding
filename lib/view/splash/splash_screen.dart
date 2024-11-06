@@ -1,4 +1,6 @@
 
+import 'package:bloc_clean_coding/config/components/loading_widget.dart';
+import 'package:bloc_clean_coding/config/components/round_button.dart';
 import 'package:bloc_clean_coding/config/routes/routes_name.dart';
 import 'package:bloc_clean_coding/view/home/home_screen.dart';
 import 'package:flutter/material.dart';
@@ -14,13 +16,35 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-body: Center(
-  child: TextButton(
-    onPressed: (){
-      Navigator.pushNamed(context, RoutesName.homeScreen);
-      // Navigator.push(context, MaterialPageRoute(builder: (context) =>HomeScreen()));
-    },
-    child: Text('Home'),
+body: Padding(
+  padding: const EdgeInsets.all(8.0),
+  child: SafeArea(
+    child: Center(
+      child: Column(
+        children: [
+          SizedBox(height: 20,),
+          RoundButton(title: 'Login', onPress: (){}),
+          SizedBox(height: 20,),
+          RoundButton(
+              title: 'SignUp',
+              height: 100,
+              onPress: (){
+
+          }
+          ),
+          LoadingWidget(),
+          Center(
+            child: TextButton(
+              onPressed: (){
+                Navigator.pushNamed(context, RoutesName.homeScreen);
+                // Navigator.push(context, MaterialPageRoute(builder: (context) =>HomeScreen()));
+              },
+              child: Text('Home'),
+            ),
+          ),
+        ],
+      ),
+    ),
   ),
 ),
     );
