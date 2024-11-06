@@ -3,6 +3,7 @@ import 'package:bloc_clean_coding/config/components/internet_exception_widget.da
 import 'package:bloc_clean_coding/config/components/loading_widget.dart';
 import 'package:bloc_clean_coding/config/components/round_button.dart';
 import 'package:bloc_clean_coding/config/routes/routes_name.dart';
+import 'package:bloc_clean_coding/data/exceptions/app_exceptions.dart';
 import 'package:bloc_clean_coding/view/home/home_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -17,6 +18,11 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+          onPressed: (){
+           throw NoInternetException('No Internet Connection');
+          }
+      ),
 body: Padding(
   padding: const EdgeInsets.all(8.0),
   child: SafeArea(
