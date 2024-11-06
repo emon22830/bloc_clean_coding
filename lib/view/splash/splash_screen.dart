@@ -1,4 +1,5 @@
 
+import 'package:bloc_clean_coding/config/components/internet_exception_widget.dart';
 import 'package:bloc_clean_coding/config/components/loading_widget.dart';
 import 'package:bloc_clean_coding/config/components/round_button.dart';
 import 'package:bloc_clean_coding/config/routes/routes_name.dart';
@@ -22,26 +23,38 @@ body: Padding(
     child: Center(
       child: Column(
         children: [
-          SizedBox(height: 20,),
-          RoundButton(title: 'Login', onPress: (){}),
-          SizedBox(height: 20,),
-          RoundButton(
-              title: 'SignUp',
-              height: 100,
-              onPress: (){
 
-          }
-          ),
-          LoadingWidget(),
-          Center(
-            child: TextButton(
-              onPressed: (){
-                Navigator.pushNamed(context, RoutesName.homeScreen);
-                // Navigator.push(context, MaterialPageRoute(builder: (context) =>HomeScreen()));
-              },
-              child: Text('Home'),
-            ),
-          ),
+
+
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 28.0),
+            child: InternetExceptionWidget(onPress: (){
+
+            },),
+          )
+
+
+
+          // SizedBox(height: 20,),
+          // RoundButton(title: 'Login', onPress: (){}),
+          // SizedBox(height: 20,),
+          // RoundButton(
+          //     title: 'SignUp',
+          //     height: 100,
+          //     onPress: (){
+          //
+          // }
+          // ),
+          // LoadingWidget(),
+          // Center(
+          //   child: TextButton(
+          //     onPressed: (){
+          //       Navigator.pushNamed(context, RoutesName.homeScreen);
+          //       // Navigator.push(context, MaterialPageRoute(builder: (context) =>HomeScreen()));
+          //     },
+          //     child: Text('Home'),
+          //   ),
+          // ),
         ],
       ),
     ),
