@@ -21,3 +21,6 @@ class TimeOutException extends AppException {
 class FetchDataException extends AppException {
   FetchDataException([String? message]) : super(message, '');
 }
+class UnauthorisedException extends AppException {
+  UnauthorisedException([String? message]) : super(message, 'Unauthorized Access');
+}
