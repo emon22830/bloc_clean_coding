@@ -27,24 +27,6 @@ class NetworkServicesApi implements BaseApiServices{
     return jsonResponse;
   }
 
-  @override
-  Future<dynamic> deleteApi(String url) async{
-    dynamic jsonResponse;
-    try{
-      final response = await http.delete(Uri.parse(url)).timeout(Duration(seconds: 40));
-
-      jsonResponse = returnResponse(response);
-
-      if(response.statusCode == 200){
-
-      }
-    }on SocketException{
-      throw NoInternetException();
-    }on TimeOutException{
-      throw FetchDataException('Time Out, Try Again');
-    }
-    return jsonResponse;
-  }
 
   @override
   Future<dynamic> postApi(String url, var data) async{
@@ -88,5 +70,24 @@ class NetworkServicesApi implements BaseApiServices{
           throw UnauthorisedException();
 
     }
+  }
+
+  @override
+  Future<dynamic> deletetApi(String url) async{
+    dynamic jsonResponse;
+    try{
+      final response = await http.delete(Uri.parse(url)).timeout(Duration(seconds: 40));
+
+      jsonResponse = returnResponse(response);
+
+      if(response.statusCode == 200){
+
+      }
+    }on SocketException{
+      throw NoInternetException();
+    }on TimeOutException{
+      throw FetchDataException('Time Out, Try Again');
+    }
+    return jsonResponse;
   }
 }
